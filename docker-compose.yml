@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  db:
+    image: mongo
+    container_name: locomoov-db
+    restart: always
+    ports:
+      - 27017:27107
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: locomoov
+      MONGO_INITDB_ROOT_PASSWORD: locomoov_pass
+
+
+  api:
+    container_name: locomoov_api
+    build: .
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/app
+      - /usr/src/node_modules
+    depends_on:
+      - db
+    command: npm run start
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '10m'
+        max-file: '5'
