@@ -6,7 +6,9 @@ import Profile from "./src/screens/Profile/Profile";
 import Unlocked from "./src/screens/Unlocked/Unlockd"
 import { Image, Text, TouchableOpacity } from "react-native";
 import profileIcon from "./assets/img/profile.jpg";
-
+import { LogBox } from 'react-native';
+LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+LogBox.ignoreAllLogs();//Ignore all log notifications
 const Stack = createNativeStackNavigator();
 
 export default function App() {

@@ -81,8 +81,12 @@ export default function Home({ navigation }) {
         .then((response) => response.json())
         .then(async (data) => {
           console.log(data);
-          setScanned(false)
-          navigation.replace("Unlocked");
+          // Alert.alert("Alerta", `Patinete ${data._id} desbloqueado!`, [
+          //   { text: "OK", onPress: () => {
+              setScanned(false)
+              navigation.replace("Unlocked");
+          //   }},
+          // ]);
         })
         .catch((error) => {
           console.log(JSON.stringify(error));

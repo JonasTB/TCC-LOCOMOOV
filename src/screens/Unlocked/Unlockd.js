@@ -1,9 +1,9 @@
-import { View, Text, SafeAreaView, StyleSheet, Image } from "react-native";
+import { View, Text, SafeAreaView, StyleSheet, Image, Button, TouchableWithoutFeedback } from "react-native";
 import CountDown from "react-native-countdown-component";
 import React, { useState, useEffect } from "react";
 import locker from "../../../assets/img/locker.png";
-
-export default function Unlockd() {
+import correct from "../../../assets/img/correct.png";
+export default function Unlockd({ navigation }) {
   const [time, setTime] = useState(15);
 
   // let counter = () => {
@@ -16,11 +16,17 @@ export default function Unlockd() {
 
   // counter()
 
+  const [scooterDelivered, setScooterDelivered] = useState(false)
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.unlockTop}>
         <View style={styles.lockerBg}>
-          <Image source={locker} />
+          <TouchableWithoutFeedback onPress={() => {
+                setScooterDelivered(true)
+              }}>
+            <Image source={locker} />
+          </TouchableWithoutFeedback>
         </View>
         <Text style={styles.unlockedText}>Patinete desbloqueado!</Text>
       </View>
@@ -34,7 +40,7 @@ export default function Unlockd() {
               size={20}
               digitStyle={{ backgroundColor: "#092969" }}
               digitTxtStyle={{ color: "#fff" }}
-              timeLabels={{m: null, s: null}}
+              timeLabels={{ m: null, s: null }}
             />
           </View>
           <Text style={styles.bottomText}>minutos</Text>
@@ -43,6 +49,27 @@ export default function Unlockd() {
           <Text style={styles.bottomText}>Para entregá-lo no destino.</Text>
         </View>
       </View>
+      {scooterDelivered ?
+        <View style={styles.delivered}>
+          <View style={styles.thanks}>
+            <Image source={correct} style={styles.correctIcon} />
+            <Text style={styles.deliveredText}>Patinete devolvido com sucesso.</Text>
+            <Text style={styles.thanksText}>Obrigado!</Text>
+          </View>
+          <View style={styles.menuButton}>
+            <Button
+              title="Voltar ao menu"
+              color="green"
+              accessibilityLabel="Login Button"
+              onPress={() => {
+                navigation.replace("Home");
+              }}
+            />
+          </View>
+        </View>
+      :
+      <></>
+      }
     </SafeAreaView>
   );
 }
@@ -84,4 +111,39 @@ const styles = StyleSheet.create({
   timeLeft: {
     marginHorizontal: 8,
   },
+  delivered: {
+    backgroundColor: "#23ad00",
+    position: "absolute",
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    width: "100%",
+    display: 'flex',
+    justifyContent: "center",
+  },
+  thanks: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  correctIcon: {
+    height: "35%",
+    width: "35%",
+  },
+  deliveredText: {
+    color: 'white',
+    fontSize: 24,
+    marginTop: 64
+  },
+  thanksText: {
+    marginTop: 16,
+    color: 'white',
+    fontSize: 24
+  },
+  menuButton: {
+    backgroundColor: 'white',
+    margin: 80,
+    borderRadius: 50
+  }
 });
