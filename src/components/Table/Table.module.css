@@ -1,0 +1,210 @@
+.table {
+  border-collapse: collapse;
+  border: none;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.tableRowHeader {
+  background-color: transparent;
+  transition: all 0.25s ease;
+  border-radius: 10px;
+}
+
+.tableHeader {
+  background-color: #f1f1f1;
+  padding: 12px;
+  font-weight: 500;
+  text-align: left;
+  font-size: 14px;
+  color: #2c3e50;
+}
+
+.tableHeader:not(:last-child) {
+  border-right: 1px solid black;
+}
+
+.tableHeader:first-child {
+  border-top-left-radius: 15px;
+}
+
+.tableHeader:last-child {
+  border-top-right-radius: 15px;
+}
+
+.tableRowItems {
+  cursor: auto;
+}
+
+.tableRowItems:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.tableCell {
+  padding: 12px;
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
+}
+
+.tableCell:not(:last-child) {
+  border-right: 1px solid black;
+}
+
+@media (max-width: 375px) {
+  .tableCell {
+    padding: 5px;
+    font-size: 8px;
+    color: black;
+    font-weight: bold;
+    max-width: 50px;
+    /* font-size: 20dp; */
+    white-space: nowrap;
+    overflow: hidden;
+    /* "overflow" value must be different from "visible" */
+    text-overflow: ellipsis;
+    /* border: 1px solid #ccc; */
+  }
+
+  .tableHeader {
+    padding: 5px;
+    font-size: 8px;
+    color: black;
+    font-weight: bold;
+    max-width: 50px;
+    /* font-size: 20dp; */
+    white-space: nowrap;
+    overflow: hidden;
+    /* "overflow" value must be different from "visible" */
+    text-overflow: ellipsis;
+    /* border: 1px solid #ccc; */
+  }
+}
+
+@media (max-width: 320px) {
+  .tableCell {
+    padding: 5px;
+    font-size: 8px;
+    color: black;
+    font-weight: bold;
+    max-width: 50px;
+    /* font-size: 20dp; */
+    white-space: nowrap;
+    overflow: hidden;
+    /* "overflow" value must be different from "visible" */
+    text-overflow: ellipsis;
+    /* border: 1px solid #ccc; */
+  }
+
+  .tableHeader {
+    background-color: #f1f1f1;
+    padding: 5px;
+    font-weight: 500;
+    text-align: left;
+    font-size: 8px;
+    color: #2c3e50;
+    max-width: 50px;
+    /* font-size: 20dp; */
+    white-space: nowrap;
+    overflow: hidden;
+    /* "overflow" value must be different from "visible" */
+    text-overflow: ellipsis;
+    /* border: 1px solid #ccc; */
+  }
+}
+
+@media (max-width: 425px) {
+  .tableCell {
+    padding: 5px;
+    font-size: 8px;
+    color: black;
+    font-weight: bold;
+    max-width: 50px;
+    /* font-size: 20dp; */
+    white-space: nowrap;
+    overflow: hidden;
+    /* "overflow" value must be different from "visible" */
+    text-overflow: ellipsis;
+    /* border: 1px solid #ccc; */
+  }
+
+  .tableHeader {
+    background-color: #f1f1f1;
+    padding: 5px;
+    font-weight: 500;
+    text-align: left;
+    font-size: 8px;
+    color: #2c3e50;
+    max-width: 50px;
+    /* font-size: 20dp; */
+    white-space: nowrap;
+    overflow: hidden;
+    /* "overflow" value must be different from "visible" */
+    text-overflow: ellipsis;
+    /* border: 1px solid #ccc; */
+  }
+}
+
+@media (max-width: 540px) {
+  .tableCell {
+    padding: 5px;
+    font-size: 10px;
+    color: black;
+    font-weight: bold;
+    max-width: 50px;
+    /* font-size: 20dp; */
+    white-space: nowrap;
+    overflow: hidden;
+    /* "overflow" value must be different from "visible" */
+    text-overflow: ellipsis;
+    /* border: 1px solid #ccc; */
+  }
+
+  .tableHeader {
+    background-color: #f1f1f1;
+    padding: 5px;
+    font-weight: 500;
+    text-align: left;
+    font-size: 10px;
+    color: #2c3e50;
+    max-width: 50px;
+    /* font-size: 20dp; */
+    white-space: nowrap;
+    overflow: hidden;
+    /* "overflow" value must be different from "visible" */
+    text-overflow: ellipsis;
+    /* border: 1px solid #ccc; */
+  }
+}
+
+@media (max-width: 280px) {
+  .tableCell {
+    padding: 5px;
+    font-size: 8px;
+    color: black;
+    font-weight: bold;
+    max-width: 30px;
+    /* font-size: 20dp; */
+    white-space: nowrap;
+    overflow: hidden;
+    /* "overflow" value must be different from "visible" */
+    text-overflow: ellipsis;
+    /* border: 1px solid #ccc; */
+  }
+
+  .tableHeader {
+    background-color: #f1f1f1;
+    padding: 5px;
+    font-weight: 500;
+    text-align: left;
+    font-size: 8px;
+    color: #2c3e50;
+    max-width: 50px;
+    /* font-size: 20dp; */
+    white-space: nowrap;
+    overflow: hidden;
+    /* "overflow" value must be different from "visible" */
+    text-overflow: ellipsis;
+    /* border: 1px solid #ccc; */
+  }
+}
